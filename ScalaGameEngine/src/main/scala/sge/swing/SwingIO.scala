@@ -211,7 +211,7 @@ object SwingIO:
     setBackground(color)
 
     def add(renderer: (Graphics2D => Unit, Int)): Unit =
-      renderers = renderers :+ renderer
+      renderers = renderer +: renderers
 
     def showRenderers(): Unit = SwingUtilities.invokeLater(() => {
       show = true; repaint()
